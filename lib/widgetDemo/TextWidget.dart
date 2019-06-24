@@ -11,8 +11,8 @@ class TextWidget extends StatelessWidget {
         child: Text(
           "textWidget,textWidget,textWidget,textWidget,textWidget,textWidget,",
           textAlign: TextAlign.center,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
+//          maxLines: 1,
+//          overflow: TextOverflow.ellipsis,
           style: TextStyle(
               color: Colors.lightBlue,
               fontSize: 25,

@@ -23,7 +23,13 @@ class ContainerWidget extends StatelessWidget {
         decoration: BoxDecoration(
             color: Colors.grey,
             borderRadius: BorderRadius.all(Radius.circular(8)),
-            border: Border.all(color: Colors.lightBlue, width: 2)),
+            border: Border.all(color: Colors.lightBlue, width: 2),
+            boxShadow: [
+              new BoxShadow(
+                  color: Colors.deepPurpleAccent,
+                  blurRadius: 8,
+                  offset: Offset(5, 5))
+            ]),
       ),
     );
   }
