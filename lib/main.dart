@@ -14,6 +14,7 @@ import 'widgetDemo/ScaffoldWidget.dart';
 import 'widgetDemo/SingleChildScorllViewWidget.dart';
 import 'widgetDemo/CustomScrollViewWidget.dart';
 import 'widgetDemo/ListViewWidget.dart';
+import 'widgetDemo/GridViewWidget.dart';
 
 void main() => runApp(MyApp());
 
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
 //      home: new ScaffoldWidget(),
 //      home: new SingleChildScrollViewWidget(),
 //      home: new CustomScrollViewWidget(),
-      home: new ListViewWidget(),
+//      home: new ListViewWidget(),
+      home: new GridViewWidget(),
     );
   }
 }
