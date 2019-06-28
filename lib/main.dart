@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'LoginPage.dart';
 import 'widgetDemo/TextWidget.dart';
 import 'widgetDemo/ContainerWidget.dart';
 import 'widgetDemo/ImageWidget.dart';
@@ -15,6 +14,7 @@ import 'widgetDemo/SingleChildScorllViewWidget.dart';
 import 'widgetDemo/CustomScrollViewWidget.dart';
 import 'widgetDemo/ListViewWidget.dart';
 import 'widgetDemo/GridViewWidget.dart';
+import 'ui/LoginPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-//      home: new LoginPage(),
+      home: new LoginPage(),
 //      home: new TextWidget(),
 //      home: new ContainerWidget(),
 //      home: new TextFieldWidget(),
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
 //      home: new SingleChildScrollViewWidget(),
 //      home: new CustomScrollViewWidget(),
 //      home: new ListViewWidget(),
-      home: new GridViewWidget(),
+//      home: new GridViewWidget(),
     );
   }
 }

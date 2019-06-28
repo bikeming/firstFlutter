@@ -22,7 +22,7 @@ class ContainerWidget extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
             color: Colors.grey,
-            borderRadius: BorderRadius.all(Radius.circular(8)),
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight:Radius.circular(20) ),
             border: Border.all(color: Colors.lightBlue, width: 2),
             boxShadow: [
               new BoxShadow(
