@@ -15,14 +15,15 @@ import 'widgetDemo/CustomScrollViewWidget.dart';
 import 'widgetDemo/ListViewWidget.dart';
 import 'widgetDemo/GridViewWidget.dart';
 import 'ui/LoginPage.dart';
+import 'package:firstflutter/utils/RouteUtils.dart';
+import 'package:firstflutter/ui/MainPage.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-      home: new LoginPage(),
+    return MaterialApp(home: new LoginPage(),
 //      home: new TextWidget(),
 //      home: new ContainerWidget(),
 //      home: new TextFieldWidget(),
@@ -36,6 +37,8 @@ class MyApp extends StatelessWidget {
 //      home: new CustomScrollViewWidget(),
 //      home: new ListViewWidget(),
 //      home: new GridViewWidget(),
-    );
+        routes: {
+          RouteUtils.MAINPAGE: (btx) => new MainPage(),
+        });
   }
 }

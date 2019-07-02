@@ -7,6 +7,7 @@ import 'package:firstflutter/http/DioUtil.dart';
 import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:firstflutter/bean/LoginResponse.dart';
+import 'package:firstflutter/utils/RouteUtils.dart';
 
 /// @author: fjm
 /// @date: 2019/6/26 15:00
@@ -55,9 +56,11 @@ class LoginBody extends StatelessWidget {
   final TextEditingController _userNameController = new TextEditingController();
   final TextEditingController _pwdController = new TextEditingController();
   final TapGestureRecognizer _recognizer = new TapGestureRecognizer();
+  BuildContext _context;
 
   @override
   Widget build(BuildContext context) {
+    _context = context;
     return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -79,7 +82,7 @@ class LoginBody extends StatelessWidget {
     );
   }
 
-  void _loginBtPress() {
+  _loginBtPress() {
     if (_userNameController.text.isEmpty) {
       Fluttertoast.showToast(msg: "请输入用户名");
       return;
@@ -99,6 +102,8 @@ class LoginBody extends StatelessWidget {
       (data) {
         LoginResponse response = LoginResponse.fromJsonMap(data);
         Fluttertoast.showToast(msg: response.username);
+        RouteUtils.pushNamed(_context, RouteUtils.MAINPAGE,
+            arguments: response.username);
       },
       params: map,
     );

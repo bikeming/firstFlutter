@@ -80,6 +80,7 @@ class ScaffoldState extends State<ScaffoldWidget>
   void _ontaped(int value) {
     setState(() {
       this._currentIndex = value;
+      controller.index = value;
     });
   }
 }
