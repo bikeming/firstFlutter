@@ -80,6 +80,8 @@ class DioUtil {
 
       if (response.statusCode == 200) {
         String dataStr = json.encode(response.data);
+        print("ResponseData=>>>" + dataStr);
+
         Map<String, dynamic> dataMap = json.decode(dataStr);
         if (dataMap != null && dataMap[CODE] == 0) {
           return dataMap[DATA];

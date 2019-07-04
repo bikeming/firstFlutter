@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'Page1.dart';
+import 'package:firstflutter/ui/home/Page1.dart';
 import 'Page2.dart';
 import 'Page3.dart';
 import 'Page4.dart';
@@ -47,7 +47,7 @@ class _MainPageState extends State<MainPage>
 
   @override
   Widget build(BuildContext context) {
-    var userName=ModalRoute.of(context).settings.arguments;
+    var userName = ModalRoute.of(context).settings.arguments;
 
     return Scaffold(
       appBar: AppBar(
