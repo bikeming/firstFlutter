@@ -20,35 +20,37 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
+    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)
+      ..init(context);
 
     return Scaffold(
         body: Stack(
-      alignment: AlignmentDirectional.topCenter,
-      children: <Widget>[
-        ///登录背景
-        Image.asset(
-          _loginBg,
-          width: double.infinity,
-          height: double.infinity,
-          fit: BoxFit.fill,
-        ),
+          alignment: AlignmentDirectional.topCenter,
+          children: <Widget>[
 
-        ///圆角头像
-        Container(
-          margin: EdgeInsets.only(top: 100),
-          child: ClipOval(
-            child: Image.asset(
-              _avator,
-              width: 100,
+            ///登录背景
+            Image.asset(
+              _loginBg,
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.fill,
             ),
-          ),
-        ),
 
-        ///主题页面
-        new LoginBody()
-      ],
-    ));
+            ///圆角头像
+            Container(
+              margin: EdgeInsets.only(top: 100),
+              child: ClipOval(
+                child: Image.asset(
+                  _avator,
+                  width: 100,
+                ),
+              ),
+            ),
+
+            ///主题页面
+            new LoginBody()
+          ],
+        ));
   }
 }
 
@@ -65,6 +67,7 @@ class LoginBody extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
+
           ///用户名Widget
           userName(),
 
@@ -107,6 +110,7 @@ class LoginBody extends StatelessWidget {
       },
       params: map,
     );
+
   }
 
   Widget registRichText() {
@@ -171,12 +175,12 @@ class LoginBody extends StatelessWidget {
                         contentPadding: EdgeInsets.all(10),
                         enabledBorder: OutlineInputBorder(
                           borderSide:
-                              BorderSide(color: Colors.white, width: 0.8),
+                          BorderSide(color: Colors.white, width: 0.8),
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide:
-                              BorderSide(color: Colors.lightBlue, width: 0.8),
+                          BorderSide(color: Colors.lightBlue, width: 0.8),
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ))))
           ],
@@ -209,7 +213,7 @@ class LoginBody extends StatelessWidget {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide:
-                          BorderSide(color: Colors.lightBlue, width: 0.8),
+                      BorderSide(color: Colors.lightBlue, width: 0.8),
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                     ))))
       ],
