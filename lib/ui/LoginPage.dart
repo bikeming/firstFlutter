@@ -20,25 +20,24 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)
-      ..init(context);
+    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
 
     return Scaffold(
-        body: Stack(
-          alignment: AlignmentDirectional.topCenter,
-          children: <Widget>[
-
-            ///登录背景
-            Image.asset(
-              _loginBg,
-              width: double.infinity,
-              height: double.infinity,
-              fit: BoxFit.fill,
-            ),
-
-            ///圆角头像
-            Container(
-              margin: EdgeInsets.only(top: 100),
+        body:
+            Stack(alignment: AlignmentDirectional.topCenter, children: <Widget>[
+      ///登录背景
+      Image.asset(
+        _loginBg,
+        width: double.infinity,
+        height: double.infinity,
+        fit: BoxFit.fill,
+      ),
+      Column(
+        children: <Widget>[
+          ///圆角头像
+          Expanded(
+            child: Container(
+              alignment: Alignment.center,
               child: ClipOval(
                 child: Image.asset(
                   _avator,
@@ -46,17 +45,25 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
             ),
+            flex: 1,
+          ),
 
-            ///主题页面
-            new LoginBody()
-          ],
-        ));
+          ///主题页面
+          Expanded(
+            child: new LoginBody(),
+            flex: 2,
+          )
+        ],
+      )
+    ]));
   }
 }
 
 class LoginBody extends StatelessWidget {
-  final TextEditingController _userNameController = new TextEditingController();
-  final TextEditingController _pwdController = new TextEditingController();
+  final TextEditingController _userNameController =
+      new TextEditingController(text: "fengzi");
+  final TextEditingController _pwdController =
+      new TextEditingController(text: "123456");
   final TapGestureRecognizer _recognizer = new TapGestureRecognizer();
   BuildContext _context;
 
@@ -64,10 +71,10 @@ class LoginBody extends StatelessWidget {
   Widget build(BuildContext context) {
     _context = context;
     return Container(
+      alignment: Alignment.topCenter,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+//        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-
           ///用户名Widget
           userName(),
 
@@ -110,7 +117,6 @@ class LoginBody extends StatelessWidget {
       },
       params: map,
     );
-
   }
 
   Widget registRichText() {
@@ -164,23 +170,25 @@ class LoginBody extends StatelessWidget {
                 color: Colors.lightBlue,
                 size: 35,
               ),
-              margin: EdgeInsets.fromLTRB(0, 20, 20, 20),
+              margin: EdgeInsets.fromLTRB(0, 0, 20, 20),
             ),
             Expanded(
                 child: TextField(
+                    autofocus: true,
                     controller: _userNameController,
+//                    textInputAction: TextInputAction.newline,
                     style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                         hintText: "用户名",
                         contentPadding: EdgeInsets.all(10),
                         enabledBorder: OutlineInputBorder(
                           borderSide:
-                          BorderSide(color: Colors.white, width: 0.8),
+                              BorderSide(color: Colors.white, width: 0.8),
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide:
-                          BorderSide(color: Colors.lightBlue, width: 0.8),
+                              BorderSide(color: Colors.lightBlue, width: 0.8),
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ))))
           ],
@@ -202,6 +210,7 @@ class LoginBody extends StatelessWidget {
         Expanded(
             child: TextField(
                 controller: _pwdController,
+//                textInputAction: TextInputAction.go,
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                     hintText: "密码",
@@ -213,7 +222,7 @@ class LoginBody extends StatelessWidget {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide:
-                      BorderSide(color: Colors.lightBlue, width: 0.8),
+                          BorderSide(color: Colors.lightBlue, width: 0.8),
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                     ))))
       ],
