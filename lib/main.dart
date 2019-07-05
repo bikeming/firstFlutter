@@ -17,7 +17,7 @@ import 'widgetDemo/GridViewWidget.dart';
 import 'ui/LoginPage.dart';
 import 'package:firstflutter/utils/RouteUtils.dart';
 import 'package:firstflutter/ui/MainPage.dart';
-
+import 'package:firstflutter/ui/WebViewPage.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget {
 //      home: new GridViewWidget(),
         routes: {
           RouteUtils.MAINPAGE: (btx) => new MainPage(),
+          RouteUtils.WebViewPage: (btx) => new WebViewPage(),
         });
   }
 }

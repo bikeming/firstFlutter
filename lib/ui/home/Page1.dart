@@ -70,20 +70,6 @@ class _Page1State extends State<Page1> {
         ));
   }
 
-  Future<void> _onrefresh() async {
-    await this.setState(() {
-      currentPage = 0;
-    });
-  }
-
-  void _onLoadMore() async {
-    await Future.delayed(Duration(seconds: 2), () {
-      setState(() {
-        currentPage++;
-      });
-    });
-  }
-
   ///博客列表Widget
   Widget _homeBlocWidget() {
     return FutureBuilder(
@@ -164,6 +150,20 @@ class _Page1State extends State<Page1> {
         }
       },
     );
+  }
+
+  Future<void> _onrefresh() async {
+    await this.setState(() {
+      currentPage = 0;
+    });
+  }
+
+  void _onLoadMore() async {
+    await Future.delayed(Duration(seconds: 2), () {
+      setState(() {
+        currentPage++;
+      });
+    });
   }
 
   Future _getHomeBanner() {

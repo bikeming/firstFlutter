@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:firstflutter/bean/datas.dart';
+import 'package:firstflutter/utils/RouteUtils.dart';
+
 /// @author: jm
 /// @date: 2019/7/4 11:40
 /// @Version:1.0
@@ -14,11 +16,14 @@ class HomeBlocItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     return InkWell(
       onTap: () {
         Fluttertoast.showToast(msg: bloclist[index].link);
+        Map<String, String> map = {
+          "title": bloclist[index].title,
+          "linkUrl": bloclist[index].link
+        };
+        RouteUtils.pushNamed(context, RouteUtils.WebViewPage, arguments: map);
       },
       child: Container(
         decoration: BoxDecoration(
