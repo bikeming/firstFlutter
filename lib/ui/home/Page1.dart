@@ -10,6 +10,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:firstflutter/bean/HomeBlocBean.dart';
 import 'package:firstflutter/ui/home/HomeBlocItem.dart';
 import 'package:firstflutter/bean/datas.dart';
+import 'package:firstflutter/utils/RouteUtils.dart';
 
 /// @author: jm
 /// @date: 2019/7/1 13:44
@@ -136,6 +137,12 @@ class _Page1State extends State<Page1> {
                 ),
                 onTap: () {
                   Fluttertoast.showToast(msg: list[index].title);
+                  Map<String, String> map = {
+                    "title": list[index].title,
+                    "linkUrl": list[index].url
+                  };
+                  RouteUtils.pushNamed(context, RouteUtils.WebViewPage,
+                      arguments: map);
                 },
               );
             },
