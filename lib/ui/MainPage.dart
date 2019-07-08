@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:firstflutter/ui/home/Page1.dart';
-import 'Page2.dart';
+import 'package:firstflutter/ui/system/Page2.dart';
 import 'Page3.dart';
 import 'Page4.dart';
 
@@ -22,9 +22,9 @@ class _MainPageState extends State<MainPage>
     with SingleTickerProviderStateMixin {
   List<Widget> _tabViewList = [Page1(), Page2(), Page3(), Page4()];
   List<BottomNavigationBarItem> _bottomNavigationBarItemList = [
-    new BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("page1")),
+    new BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("首页")),
     new BottomNavigationBarItem(
-        icon: Icon(Icons.headset), title: Text("page2")),
+        icon: Icon(Icons.headset), title: Text("体系")),
     new BottomNavigationBarItem(
         icon: Icon(Icons.open_with), title: Text("page3")),
     new BottomNavigationBarItem(icon: Icon(Icons.mood), title: Text("page4")),
