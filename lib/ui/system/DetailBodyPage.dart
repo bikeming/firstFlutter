@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:firstflutter/http/DioUtil.dart';
 import 'DetailItem.dart';
+import 'package:firstflutter/widgets/LoadEndWidget.dart';
 
 /// @author: jm
 /// @date: 2019/7/8 17:18
@@ -63,9 +64,9 @@ class _DetailBodyPageState extends State<DetailBodyPage> {
         itemBuilder: (context, index) {
           if (index == lastBlocList.length) {
             if (lastBlocList.length < totalCount) {
-              return loadMoreWidget("加载中...");
+              return LoadEndWidget("加载中...");
             } else {
-              return loadMoreWidget("已经到头了");
+              return LoadEndWidget("已经到头了");
             }
           } else {
             return DetailItem(lastBlocList[index]);
@@ -92,27 +93,5 @@ class _DetailBodyPageState extends State<DetailBodyPage> {
           lastBlocList.addAll(mlist);
         });
     });
-  }
-
-  ///加载更多
-  Widget loadMoreWidget(String text) {
-    return Center(
-      child: Padding(
-        padding: EdgeInsets.all(10.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            new Text(
-              text,
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.lightBlue,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
   }
 }
