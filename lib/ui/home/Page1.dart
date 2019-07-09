@@ -24,6 +24,7 @@ class Page1 extends StatefulWidget {
 
 class _Page1State extends State<Page1> {
   int currentPage = 0;
+  int _totalCount = 0;
   ScrollController scrollController;
   List<Datas> lastBlocList = new List();
 
@@ -78,7 +79,7 @@ class _Page1State extends State<Page1> {
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (snapshot.hasData) {
             HomeBlocBean blocBean = HomeBlocBean.fromJsonMap(snapshot.data);
-
+          _totalCount=  blocBean.total;
             List<Datas> newBlocList = new List();
             newBlocList.addAll(lastBlocList);
             if (currentPage == 0) {
@@ -91,7 +92,7 @@ class _Page1State extends State<Page1> {
               itemBuilder: (context, index) {
                 if (index == newBlocList.length) {
                   if (currentPage < blocBean.pageCount) {
-                    return loadMoreWidget("加载中");
+                    return loadMoreWidget("加载中...");
                   } else {
                     return loadMoreWidget("已经到头了");
                   }
@@ -103,17 +104,22 @@ class _Page1State extends State<Page1> {
               controller: scrollController,
             );
           } else {
-            return Container(
-              alignment: Alignment.center,
-              height: ScreenUtil.screenHeight * 4 / 5,
-              width: ScreenUtil.screenWidth,
-              child: Text("loadError"),
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  CircularProgressIndicator(
+                    strokeWidth: 1.0,
+                  ),
+                  Text("加载中...")
+                ],
+              ),
             );
           }
         });
   }
 
-  ///博客列表Widget
+  ///轮播图Widget
   Widget _homeBannerWidget() {
     return FutureBuilder(
       future: _getHomeBanner(),

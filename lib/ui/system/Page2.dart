@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:firstflutter/http/DioUtil.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:firstflutter/utils/RouteUtils.dart';
 import 'dart:math';
 
 /// @author: jm
@@ -38,33 +38,37 @@ class _Page2State extends State<Page2> {
           builder: (BuildContext context, AsyncSnapshot snapShot) {
             if (snapShot.hasData) {
               List list = snapShot.data;
-              return Container(
-                padding: EdgeInsets.only(left: 10),
-                child: Wrap(
-                  direction: Axis.horizontal,
-                  alignment: WrapAlignment.start,
-                  spacing: 10,
-                  runSpacing: 5,
-                  children: list.map((listItem) {
-                    return ActionChip(
-                        label: Text(
-                          listItem["name"],
-                          style: TextStyle(
-                              color: colorList[
-                                  Random().nextInt(colorList.length)]),
-                        ),
-                        avatar: CircleAvatar(
-                          child: Text(
-                            listItem["name"].toString().substring(0, 1),
-                            style: TextStyle(color: Colors.white),
+              return ListView(
+                padding: EdgeInsets.only(left: 10, bottom: 10),
+                children: <Widget>[
+                  Wrap(
+                    direction: Axis.horizontal,
+                    alignment: WrapAlignment.start,
+                    spacing: 10,
+                    runSpacing: 5,
+                    children: list.map((listItem) {
+                      return ActionChip(
+                          label: Text(
+                            listItem["name"],
+                            style: TextStyle(
+                                color: colorList[
+                                    Random().nextInt(colorList.length)]),
                           ),
-                          backgroundColor: Colors.lightBlue,
-                        ),
-                        onPressed: () {
-                          Fluttertoast.showToast(msg: listItem["name"]);
-                        });
-                  }).toList(),
-                ),
+                          avatar: CircleAvatar(
+                            child: Text(
+                              listItem["name"].toString().substring(0, 1),
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            backgroundColor: Colors.lightBlue,
+                          ),
+                          onPressed: () {
+                            RouteUtils.pushNamed(
+                                context, RouteUtils.SystemDetailPage,
+                                arguments: listItem);
+                          });
+                    }).toList(),
+                  ),
+                ],
               );
             } else {
               return Center(
@@ -85,7 +89,9 @@ class _Page2State extends State<Page2> {
   }
 
   Future<void> _reFreshed() async {
-    setState(() {});
+    await Future.delayed(Duration(seconds: 1), () {
+      setState(() {});
+    });
   }
 
   Future _getSystemData() {

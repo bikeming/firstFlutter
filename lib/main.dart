@@ -18,6 +18,8 @@ import 'ui/LoginPage.dart';
 import 'package:firstflutter/utils/RouteUtils.dart';
 import 'package:firstflutter/ui/MainPage.dart';
 import 'package:firstflutter/ui/WebViewPage.dart';
+import 'package:firstflutter/ui/system/SystemDetailPage.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -40,6 +42,7 @@ class MyApp extends StatelessWidget {
         routes: {
           RouteUtils.MAINPAGE: (btx) => new MainPage(),
           RouteUtils.WebViewPage: (btx) => new WebViewPage(),
+          RouteUtils.SystemDetailPage: (btx) => new SystemDetailPage(),
         });
   }
 }

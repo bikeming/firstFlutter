@@ -8,7 +8,12 @@ import 'package:flutter/material.dart';
 class RouteUtils {
   ///主页面
   static const MAINPAGE = "page_main";
+
+  ///webview
   static const WebViewPage = "page_webview";
+
+  ///体系页面二级页面
+  static const SystemDetailPage = "SystemDetailPage";
 
   static void pushNamed(BuildContext buildContext, String routeKey,
       {arguments: Object}) {
