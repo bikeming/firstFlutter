@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:firstflutter/http/DioUtil.dart';
 import 'package:firstflutter/utils/RouteUtils.dart';
 import 'dart:math';
+import 'package:firstflutter/widgets/LoadingWidget.dart';
 
 /// @author: jm
 /// @date: 2019/7/1 13:45
@@ -43,7 +44,7 @@ class _Page2State extends State<Page2> {
                 children: <Widget>[
                   Wrap(
                     direction: Axis.horizontal,
-                    alignment: WrapAlignment.start,
+                    alignment: WrapAlignment.center,
                     spacing: 10,
                     runSpacing: 5,
                     children: list.map((listItem) {
@@ -71,17 +72,7 @@ class _Page2State extends State<Page2> {
                 ],
               );
             } else {
-              return Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    CircularProgressIndicator(
-                      strokeWidth: 1.0,
-                    ),
-                    Text("加载中...")
-                  ],
-                ),
-              );
+              return LoadingWidget();
             }
           },
         ),

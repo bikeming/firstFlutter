@@ -12,6 +12,7 @@ import 'package:firstflutter/ui/home/HomeBlocItem.dart';
 import 'package:firstflutter/bean/datas.dart';
 import 'package:firstflutter/utils/RouteUtils.dart';
 import 'package:firstflutter/widgets/LoadEndWidget.dart';
+import 'package:firstflutter/widgets/LoadingWidget.dart';
 
 /// @author: jm
 /// @date: 2019/7/1 13:44
@@ -81,6 +82,11 @@ class _Page1State extends State<Page1> {
 
   ///博客列表Widget
   Widget _homeBlocWidget() {
+    if (_blocList.isEmpty) {
+      return LoadingWidget(
+        loadText: '加载中...',
+      );
+    }
     return ListView.builder(
       itemBuilder: (context, index) {
         if (index == _blocList.length) {
@@ -132,12 +138,7 @@ class _Page1State extends State<Page1> {
             },
           );
         } else {
-          return Container(
-            alignment: Alignment.center,
-            height: ScreenUtil.screenHeight * 1 / 5,
-            width: ScreenUtil.screenWidth,
-            child: Text("loadError"),
-          );
+          return LoadingWidget();
         }
       },
     );

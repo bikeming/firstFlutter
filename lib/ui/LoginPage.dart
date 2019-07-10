@@ -48,7 +48,7 @@ class LoginPage extends StatelessWidget {
             flex: 1,
           ),
 
-          ///主题页面
+          ///主体页面
           Expanded(
             child: new LoginBody(),
             flex: 2,
@@ -88,7 +88,7 @@ class LoginBody extends StatelessWidget {
           registRichText()
         ],
       ),
-      margin: EdgeInsets.only(left: 20, right: 20),
+      margin: EdgeInsets.only(left: 40, right: 40),
     );
   }
 
@@ -162,74 +162,50 @@ class LoginBody extends StatelessWidget {
           primaryColor: Colors.lightBlue,
           hintColor: Colors.white70,
         ),
-        child: new Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              child: Icon(
-                Icons.account_circle,
-                color: Colors.lightBlue,
-                size: 30,
-              ),
-              margin: EdgeInsets.only(right: 10),
-            ),
-            Expanded(
-                child: TextField(
-                    autofocus: true,
-                    controller: _userNameController,
+        child: TextField(
+            autofocus: true,
+            controller: _userNameController,
 //                    textInputAction: TextInputAction.newline,
-                    style: TextStyle(color: Colors.white),
-                    decoration: InputDecoration(
-                        hintText: "用户名",
-                        contentPadding: EdgeInsets.all(10),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.white, width: 0.8),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.lightBlue, width: 0.8),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ))))
-          ],
-        ));
+            style: TextStyle(color: Colors.white),
+            decoration: InputDecoration(
+                prefixIcon: Icon(Icons.account_circle,
+                    color: Colors.lightBlue, size: 20),
+                hintText: "用户名",
+                contentPadding: EdgeInsets.all(10),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.white, width: 0.8),
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.lightBlue, width: 0.8),
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                ))));
   }
 
   Widget pwd() {
     return Container(
       margin: EdgeInsets.only(top: 20),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Container(
-            child: Icon(
-              Icons.lock_outline,
-              color: Colors.lightBlue,
-              size: 30,
-            ),
-            margin: EdgeInsets.only(right: 10),
-          ),
-          Expanded(
-              child: TextField(
-                  controller: _pwdController,
+      child: TextField(
+          controller: _pwdController,
 //                textInputAction: TextInputAction.go,
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                      hintText: "密码",
-                      hintStyle: TextStyle(color: Colors.white70),
-                      contentPadding: EdgeInsets.all(10),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white, width: 0.8),
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Colors.lightBlue, width: 0.8),
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                      ))))
-        ],
-      ),
+          style: TextStyle(color: Colors.white),
+          decoration: InputDecoration(
+              prefixIcon: Icon(
+                Icons.lock_outline,
+                color: Colors.lightBlue,
+                size: 20,
+              ),
+              hintText: "密码",
+              hintStyle: TextStyle(color: Colors.white70),
+              contentPadding: EdgeInsets.all(10),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.white, width: 0.8),
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.lightBlue, width: 0.8),
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+              ))),
     );
   }
 }

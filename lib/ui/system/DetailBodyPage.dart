@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:firstflutter/http/DioUtil.dart';
 import 'DetailItem.dart';
 import 'package:firstflutter/widgets/LoadEndWidget.dart';
+import 'package:firstflutter/widgets/LoadingWidget.dart';
 
 /// @author: jm
 /// @date: 2019/7/8 17:18
@@ -58,6 +59,10 @@ class _DetailBodyPageState extends State<DetailBodyPage> {
 
   @override
   Widget build(BuildContext context) {
+    if (lastBlocList.isEmpty) {
+      return LoadingWidget();
+    }
+
     return RefreshIndicator(
       child: ListView.builder(
         controller: scrollController,
