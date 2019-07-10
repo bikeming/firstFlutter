@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:firstflutter/ui/home/Page1.dart';
 import 'package:firstflutter/ui/system/Page2.dart';
-import 'Page3.dart';
+import 'package:firstflutter/ui/navigator/Page3.dart';
 import 'Page4.dart';
 
 /// @author: jm
