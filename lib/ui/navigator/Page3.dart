@@ -1,8 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:firstflutter/http/DioUtil.dart';
 import 'package:firstflutter/widgets/LoadingWidget.dart';
 import 'dart:math';
+import 'package:firstflutter/utils/RouteUtils.dart';
 
 /// @author: jm
 /// @date: 2019/7/1 13:45
@@ -56,28 +56,36 @@ class _Page3State extends State<Page3> {
           flex: 1,
         ),
         Expanded(
-          child: Wrap(
-            alignment: WrapAlignment.center,
-            spacing: 10,
-            runSpacing: 10,
-            children:
-                (_dataList[_onTapIndex]['articles'] as List).map((itemData) {
-              return ActionChip(
-                avatar: CircleAvatar(
-                  child: Text(itemData['title'].toString().substring(0, 1)),
-                ),
-                label: Text(
-                  itemData["title"],
-                  style: TextStyle(
-                      color: _colorList[Random().nextInt(_colorList.length)]),
-                ),
-                onPressed: () {},
-              );
-            }).toList(),
-          ),
+          child: _rightWrap(),
           flex: 3,
         )
       ],
+    );
+  }
+
+  Widget _rightWrap() {
+    return Wrap(
+      alignment: WrapAlignment.center,
+      spacing: 10,
+      runSpacing: 10,
+      children: (_dataList[_onTapIndex]['articles'] as List).map((itemData) {
+        return ActionChip(
+          avatar: CircleAvatar(
+            child: Text(itemData['title'].toString().substring(0, 1)),
+          ),
+          label: Text(
+            itemData["title"],
+            style: TextStyle(
+                color: _colorList[Random().nextInt(_colorList.length)]),
+          ),
+          onPressed: () {
+            RouteUtils.pushNamed(context, RouteUtils.WebViewPage, arguments: {
+              "title": itemData['title'],
+              "linkUrl": itemData['link']
+            });
+          },
+        );
+      }).toList(),
     );
   }
 

@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/gestures.dart';
-import 'package:firstflutter/http/DioUtils.dart';
 import 'package:firstflutter/http/DioUtil.dart';
-import 'dart:convert';
-import 'package:dio/dio.dart';
 import 'package:firstflutter/bean/LoginResponse.dart';
 import 'package:firstflutter/utils/RouteUtils.dart';
 
