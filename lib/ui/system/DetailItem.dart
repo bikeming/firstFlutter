@@ -25,12 +25,12 @@ class DetailItem extends StatelessWidget {
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(8)),
-            border: Border.all(color: Colors.lightBlueAccent, width: 2),
+            border: Border.all(color: Colors.lightBlueAccent, width: 1),
             boxShadow: [
               BoxShadow(
                   color: Colors.lightBlueAccent,
                   blurRadius: 8,
-                  offset: Offset(5, 5)),
+                  offset: Offset(3, 3)),
             ]),
         margin: EdgeInsets.all(10),
         padding: EdgeInsets.all(6),

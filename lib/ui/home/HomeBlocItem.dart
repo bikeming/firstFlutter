@@ -34,7 +34,7 @@ class HomeBlocItem extends StatelessWidget {
               BoxShadow(
                   color: Colors.lightBlueAccent,
                   blurRadius: 8,
-                  offset: Offset(5, 5)),
+                  offset: Offset(3, 3)),
             ]),
         margin: EdgeInsets.all(10),
         padding: EdgeInsets.all(6),
