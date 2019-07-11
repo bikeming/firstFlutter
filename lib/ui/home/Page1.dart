@@ -157,14 +157,15 @@ class _Page1State extends State<Page1> {
 
   _getBlocList() {
     DioUtil.getInstance().get("/article/list/$currentPage/json", (response) {
-      setState(() {
-        HomeBlocBean blocBean = HomeBlocBean.fromJsonMap(response);
-        _totalCount = blocBean.total;
-        if (currentPage == 0) {
-          _blocList.clear();
-        }
-        _blocList.addAll(blocBean.datas);
-      });
+      if (mounted)
+        setState(() {
+          HomeBlocBean blocBean = HomeBlocBean.fromJsonMap(response);
+          _totalCount = blocBean.total;
+          if (currentPage == 0) {
+            _blocList.clear();
+          }
+          _blocList.addAll(blocBean.datas);
+        });
     });
   }
 }

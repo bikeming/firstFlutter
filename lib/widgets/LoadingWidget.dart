@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 /// @Description:
 
 class LoadingWidget extends StatelessWidget {
+  String loadText;
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -17,7 +19,7 @@ class LoadingWidget extends StatelessWidget {
           ),
           Padding(padding: EdgeInsets.only(top: 10)),
           Text(
-            "加载中...",
+            loadText,
             style: TextStyle(color: Colors.lightBlue),
           )
         ],
@@ -25,5 +27,5 @@ class LoadingWidget extends StatelessWidget {
     );
   }
 
-  LoadingWidget({String loadText = "加载中..."});
+  LoadingWidget({this.loadText = "加载中..."});
 }

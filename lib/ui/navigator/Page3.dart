@@ -113,7 +113,8 @@ class _Page3State extends State<Page3> {
 
   _getDatas() {
     DioUtil.getInstance().get("/navi/json", (response) {
-      setState(() {
+      if (mounted)
+        setState(() {
         _dataList = (response as List).cast();
       });
     });

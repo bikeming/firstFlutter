@@ -29,7 +29,7 @@ class HomeBlocItem extends StatelessWidget {
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(8)),
-            border: Border.all(color: Colors.lightBlueAccent, width: 2),
+            border: Border.all(color: Colors.lightBlueAccent, width: 1),
             boxShadow: [
               BoxShadow(
                   color: Colors.lightBlueAccent,

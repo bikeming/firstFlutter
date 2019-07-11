@@ -3,7 +3,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:firstflutter/ui/home/Page1.dart';
 import 'package:firstflutter/ui/system/Page2.dart';
 import 'package:firstflutter/ui/navigator/Page3.dart';
-import 'Page4.dart';
+import 'package:firstflutter/ui/project/Page4.dart';
 
 /// @author: jm
 /// @date: 2019/7/1 13:38
@@ -26,8 +26,8 @@ class _MainPageState extends State<MainPage>
     new BottomNavigationBarItem(
         icon: Icon(Icons.headset), title: Text("体系")),
     new BottomNavigationBarItem(
-        icon: Icon(Icons.open_with), title: Text("page3")),
-    new BottomNavigationBarItem(icon: Icon(Icons.mood), title: Text("page4")),
+        icon: Icon(Icons.open_with), title: Text("导航")),
+    new BottomNavigationBarItem(icon: Icon(Icons.mood), title: Text("项目")),
   ];
   int _currentIndex = 0;
   TabController _tabController;

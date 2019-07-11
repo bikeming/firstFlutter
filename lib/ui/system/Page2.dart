@@ -81,7 +81,8 @@ class _Page2State extends State<Page2> {
 
   Future<void> _reFreshed() async {
     await Future.delayed(Duration(seconds: 1), () {
-      setState(() {});
+      if (mounted)
+        setState(() {});
     });
   }
 
