@@ -24,4 +24,11 @@ class RouteUtils {
       {arguments: Object}) {
     Navigator.pushNamed(buildContext, routeKey, arguments: arguments);
   }
+
+  static void pushNamedAndRemoveUntil(
+      BuildContext context, String newRouteName, RoutePredicate predicate,
+      {arguments: Object}) {
+    Navigator.pushNamedAndRemoveUntil(context, newRouteName, predicate,
+        arguments: arguments);
+  }
 }
