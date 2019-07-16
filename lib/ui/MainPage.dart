@@ -4,6 +4,7 @@ import 'package:firstflutter/ui/home/Page1.dart';
 import 'package:firstflutter/ui/system/Page2.dart';
 import 'package:firstflutter/ui/navigator/Page3.dart';
 import 'package:firstflutter/ui/project/Page4.dart';
+import 'UserCenterDrawer.dart';
 
 /// @author: jm
 /// @date: 2019/7/1 13:38
@@ -12,10 +13,6 @@ import 'package:firstflutter/ui/project/Page4.dart';
 class MainPage extends StatefulWidget {
   @override
   _MainPageState createState() => _MainPageState();
-//  final String userName;
-//
-//  MainPage({this.userName});
-
 }
 
 class _MainPageState extends State<MainPage>
@@ -23,10 +20,8 @@ class _MainPageState extends State<MainPage>
   List<Widget> _tabViewList = [Page1(), Page2(), Page3(), Page4()];
   List<BottomNavigationBarItem> _bottomNavigationBarItemList = [
     new BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("首页")),
-    new BottomNavigationBarItem(
-        icon: Icon(Icons.headset), title: Text("体系")),
-    new BottomNavigationBarItem(
-        icon: Icon(Icons.open_with), title: Text("导航")),
+    new BottomNavigationBarItem(icon: Icon(Icons.headset), title: Text("体系")),
+    new BottomNavigationBarItem(icon: Icon(Icons.open_with), title: Text("导航")),
     new BottomNavigationBarItem(icon: Icon(Icons.mood), title: Text("项目")),
   ];
   int _currentIndex = 0;
@@ -84,20 +79,8 @@ class _MainPageState extends State<MainPage>
           _tabController.index = index;
         }),
       ),
-      drawer: MyDrawer(),
+      drawer: UserCenterDrawer(),
     );
   }
 }
 
-class MyDrawer extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-      child: new Center(
-          child: Text(
-        "Mydrawer",
-        style: TextStyle(fontSize: 20, color: Colors.lightBlue),
-      )),
-    );
-  }
-}

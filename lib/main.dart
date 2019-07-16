@@ -19,6 +19,7 @@ import 'package:firstflutter/utils/RouteUtils.dart';
 import 'package:firstflutter/ui/MainPage.dart';
 import 'package:firstflutter/ui/WebViewPage.dart';
 import 'package:firstflutter/ui/system/SystemDetailPage.dart';
+import 'package:firstflutter/ui/usercenter/GoBangPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
           RouteUtils.MAINPAGE: (btx) => new MainPage(),
           RouteUtils.WebViewPage: (btx) => new WebViewPage(),
           RouteUtils.SystemDetailPage: (btx) => new SystemDetailPage(),
+          RouteUtils.GoBangPage: (btx) => new GobangPage(),
         });
   }
 }

@@ -15,6 +15,9 @@ class RouteUtils {
   ///体系页面二级页面
   static const SystemDetailPage = "SystemDetailPage";
 
+  ///五子棋页面
+  static const GoBangPage = "GoBangPage";
+
   static void pushNamed(BuildContext buildContext, String routeKey,
       {arguments: Object}) {
     Navigator.pushNamed(buildContext, routeKey, arguments: arguments);

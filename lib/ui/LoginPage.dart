@@ -5,6 +5,8 @@ import 'package:flutter/gestures.dart';
 import 'package:firstflutter/http/DioUtil.dart';
 import 'package:firstflutter/bean/LoginResponse.dart';
 import 'package:firstflutter/utils/RouteUtils.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firstflutter/Constants.dart';
 
 /// @author: fjm
 /// @date: 2019/6/26 15:00
@@ -38,7 +40,7 @@ class LoginPage extends StatelessWidget {
               child: ClipOval(
                 child: Image.asset(
                   _avator,
-                  width: 100,
+                  width: ScreenUtil().setWidth(180),
                 ),
               ),
             ),
@@ -57,16 +59,15 @@ class LoginPage extends StatelessWidget {
 }
 
 class LoginBody extends StatelessWidget {
-  final TextEditingController _userNameController =
-      new TextEditingController(text: "fengzi");
-  final TextEditingController _pwdController =
-      new TextEditingController(text: "123456");
+  final TextEditingController _userNameController = new TextEditingController();
+  final TextEditingController _pwdController = new TextEditingController();
   final TapGestureRecognizer _recognizer = new TapGestureRecognizer();
   BuildContext _context;
 
   @override
   Widget build(BuildContext context) {
     _context = context;
+    _initUserInfo();
     return Container(
       alignment: Alignment.topCenter,
       child: Column(
@@ -90,7 +91,6 @@ class LoginBody extends StatelessWidget {
   }
 
   _loginBtPress() {
-
     if (_userNameController.text.isEmpty) {
       Fluttertoast.showToast(msg: "请输入用户名");
       return;
@@ -99,17 +99,17 @@ class LoginBody extends StatelessWidget {
       Fluttertoast.showToast(msg: "请输入密码");
       return;
     }
-//    Fluttertoast.showToast(
-//        msg: "name:${_userNameController.text}--pwd:${_pwdController.text}");
     Map<String, dynamic> map = new Map();
     map["username"] = _userNameController.text.trim();
     map["password"] = _pwdController.text.trim();
 
     DioUtil.getInstance().post(
       "/user/login",
-      (data) {
+      (data) async {
         LoginResponse response = LoginResponse.fromJsonMap(data);
-        Fluttertoast.showToast(msg: response.username);
+        await SharedPreferences.getInstance()
+          ..setString(Constants.spKey_username, map["username"])
+          ..setString(Constants.spKey_pwd, map["password"]);
         RouteUtils.pushNamed(_context, RouteUtils.MAINPAGE,
             arguments: response.username);
       },
@@ -205,5 +205,11 @@ class LoginBody extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(10)),
               ))),
     );
+  }
+
+  void _initUserInfo() async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    _userNameController.text = sp.getString(Constants.spKey_username);
+    _pwdController.text = sp.getString(Constants.spKey_pwd);
   }
 }

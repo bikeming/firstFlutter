@@ -126,7 +126,7 @@ class _Page1State extends State<Page1> {
                   fit: BoxFit.fill,
                 ),
                 onTap: () {
-                  Fluttertoast.showToast(msg: list[index].title);
+//                  Fluttertoast.showToast(msg: list[index].title);
                   Map<String, String> map = {
                     "title": list[index].title,
                     "linkUrl": list[index].url
