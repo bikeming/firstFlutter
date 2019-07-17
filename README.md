@@ -15,12 +15,12 @@ Flutter与Dart学习的第一个项目(WanAndroid项目)
 
 ## 用到的pub库
 
-*网络请求:[dio](https://pub.flutter-io.cn/packages/dio)
-*数据存储:[shared_preferences](https://pub.flutter-io.cn/packages/shared_preferences)
-*屏幕适配:[flutter_screenutil](https://pub.flutter-io.cn/packages/flutter_screenutil)
-*WebView:[flutter_webview_plugin](https://pub.flutter-io.cn/packages/flutter_webview_plugin)
-*轮播图:[flutter_swiper](https://pub.flutter-io.cn/packages/flutter_swiper)
-*吐司:[fluttertoast](https://pub.flutter-io.cn/packages/fluttertoast)
+* 网络请求:[dio](https://pub.flutter-io.cn/packages/dio)
+* 数据存储:[shared_preferences](https://pub.flutter-io.cn/packages/shared_preferences)
+* 屏幕适配:[flutter_screenutil](https://pub.flutter-io.cn/packages/flutter_screenutil)
+* WebView:[flutter_webview_plugin](https://pub.flutter-io.cn/packages/flutter_webview_plugin)
+* 轮播图:[flutter_swiper](https://pub.flutter-io.cn/packages/flutter_swiper)
+* 吐司:[fluttertoast](https://pub.flutter-io.cn/packages/fluttertoast)
 
 This project is a starting point for a Flutter application.
 
