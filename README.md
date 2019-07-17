@@ -5,12 +5,12 @@ Flutter与Dart学习的第一个项目(WanAndroid项目)
 
 ## 项目截图
 
-![](screenshot/0.png)
-![](screenshot/1.png)
-![](screenshot/2.png)
-![](screenshot/3.png)
-![](screenshot/4.png)
-![](screenshot/5.png)
+![](screenshot/0.jpg)
+![](screenshot/1.jpg)
+![](screenshot/2.jpg)
+![](screenshot/3.jpg)
+![](screenshot/4.jpg)
+![](screenshot/5.jpg)
 
 This project is a starting point for a Flutter application.
 
