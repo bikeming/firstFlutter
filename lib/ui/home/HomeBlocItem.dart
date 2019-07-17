@@ -18,7 +18,6 @@ class HomeBlocItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Fluttertoast.showToast(msg: bloclist[index].link);
         Map<String, String> map = {
           "title": bloclist[index].title,
           "linkUrl": bloclist[index].link

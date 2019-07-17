@@ -1,10 +1,16 @@
 # firstflutter
 
-A new Flutter application.
+Flutter与Dart学习的第一个项目(WanAndroid项目)
+所有数据和接口都来自:[WanAndroid](https://www.wanandroid.com/index)
 
-## Getting Started
+## 项目截图
 
-flutter学习的demo
+![](screenshot/0.png)
+![](screenshot/1.png)
+![](screenshot/2.png)
+![](screenshot/3.png)
+![](screenshot/4.png)
+![](screenshot/5.png)
 
 This project is a starting point for a Flutter application.
 
