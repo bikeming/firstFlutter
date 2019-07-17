@@ -22,6 +22,21 @@ Flutter与Dart学习的第一个项目(WanAndroid项目)
 * 轮播图:[flutter_swiper](https://pub.flutter-io.cn/packages/flutter_swiper)
 * 吐司:[fluttertoast](https://pub.flutter-io.cn/packages/fluttertoast)
 
+
+## apk下载
+
+* [release.apk](https://github.com/bikeming/firstFlutter/blob/master/sapk/app-release.apk)
+* [debug.apk](https://github.com/bikeming/firstFlutter/blob/master/sapk/app-debug.apk)
+
+
+## Flutter 学习(推荐)
+
+* Flutter中文网:[Flutter中文网](https://flutterchina.club/)
+* Dart语言:[Dart语言](http://dart.goodev.org/guides/language/language-tour)
+* pub.dev:[pub.dev](https://pub.flutter-io.cn/)
+* 基础视频教学(技术胖的):[视频地址](https://www.bilibili.com/video/av35800108/?p=1)
+
+
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
