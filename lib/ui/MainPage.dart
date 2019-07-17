@@ -42,11 +42,12 @@ class _MainPageState extends State<MainPage>
 
   @override
   Widget build(BuildContext context) {
-    var userName = ModalRoute.of(context).settings.arguments;
-
+//    var userName = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
-        title: Text(userName != null ? userName : "aa"),
+//        title: Text(userName != null ? userName : "aa"),
+        title:
+            Text((_bottomNavigationBarItemList[_currentIndex].title as Text).data),
         centerTitle: true,
         actions: <Widget>[
           IconButton(
@@ -83,4 +84,3 @@ class _MainPageState extends State<MainPage>
     );
   }
 }
-

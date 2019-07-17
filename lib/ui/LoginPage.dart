@@ -19,8 +19,6 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
-
     return Scaffold(
         body:
             Stack(alignment: AlignmentDirectional.topCenter, children: <Widget>[
@@ -110,7 +108,7 @@ class LoginBody extends StatelessWidget {
         await SharedPreferences.getInstance()
           ..setString(Constants.spKey_username, map["username"])
           ..setString(Constants.spKey_pwd, map["password"]);
-        RouteUtils.pushNamed(_context, RouteUtils.MAINPAGE,
+        RouteUtils.pushReplacementNamed(_context, RouteUtils.MAINPAGE,
             arguments: response.username);
       },
       params: map,
@@ -161,7 +159,7 @@ class LoginBody extends StatelessWidget {
           hintColor: Colors.white70,
         ),
         child: TextField(
-            autofocus: true,
+//            autofocus: true,
             controller: _userNameController,
 //                    textInputAction: TextInputAction.newline,
             style: TextStyle(color: Colors.white),
@@ -184,6 +182,7 @@ class LoginBody extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(top: 20),
       child: TextField(
+          obscureText: true,
           controller: _pwdController,
 //                textInputAction: TextInputAction.go,
           style: TextStyle(color: Colors.white),

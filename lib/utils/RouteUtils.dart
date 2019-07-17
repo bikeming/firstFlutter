@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 /// @Description:命名路由中的KEY统一管理
 
 class RouteUtils {
+  ///登录页
+  static const LOGINPAGE = "page_login";
+
   ///主页面
   static const MAINPAGE = "page_main";
 
@@ -25,7 +28,7 @@ class RouteUtils {
 
   static void pushReplacementNamed(BuildContext buildContext, String routeKey,
       {arguments: Object}) {
-    Navigator.pushNamed(buildContext, routeKey, arguments: arguments);
+    Navigator.pushReplacementNamed(buildContext, routeKey, arguments: arguments);
   }
 
   static void pushNamedAndRemoveUntil(

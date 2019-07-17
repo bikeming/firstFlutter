@@ -20,13 +20,14 @@ import 'package:firstflutter/ui/MainPage.dart';
 import 'package:firstflutter/ui/WebViewPage.dart';
 import 'package:firstflutter/ui/system/SystemDetailPage.dart';
 import 'package:firstflutter/ui/usercenter/GoBangPage.dart';
+import 'ui/InitializePage.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: new LoginPage(),
+    return MaterialApp(home: new InitializePage(),
 //      home: new TextWidget(),
 //      home: new ContainerWidget(),
 //      home: new TextFieldWidget(),
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
           RouteUtils.WebViewPage: (btx) => new WebViewPage(),
           RouteUtils.SystemDetailPage: (btx) => new SystemDetailPage(),
           RouteUtils.GoBangPage: (btx) => new GobangPage(),
+          RouteUtils.LOGINPAGE: (btx) => new LoginPage(),
         });
   }
 }

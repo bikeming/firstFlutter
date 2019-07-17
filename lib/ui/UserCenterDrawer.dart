@@ -19,7 +19,7 @@ class UserCenterDrawer extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(10),
         child: ListView(children: <Widget>[
-          userInfo(),
+          userInfo(context),
           ListTile(
             title: Text("五子棋"),
             trailing: Icon(Icons.arrow_forward),
@@ -36,18 +36,22 @@ class UserCenterDrawer extends StatelessWidget {
     );
   }
 
-  Widget userInfo() {
+  Widget userInfo(BuildContext context) {
     final _avator = "lib/images/myAvator.jpg";
 
     return Container(
         margin: EdgeInsets.only(top: 20),
         child: Row(
           children: <Widget>[
-            ClipOval(
-                child: Image.asset(
-              _avator,
-              width: ScreenUtil().setWidth(120),
-            )),
+            InkWell(
+              child: ClipOval(
+                  child: Image.asset(
+                _avator,
+                width: ScreenUtil().setWidth(120),
+              )),
+              onTap: () => RouteUtils.pushNamedAndRemoveUntil(
+                  context, RouteUtils.LOGINPAGE, (route) => false),
+            ),
             Padding(padding: EdgeInsets.all(10)),
             Expanded(
               child: FutureBuilder(
