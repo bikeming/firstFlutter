@@ -13,7 +13,12 @@ import 'package:firstflutter/Constants.dart';
 /// @Version:1.0
 /// @Description: 登录页
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   final _loginBg = "lib/images/bg_login.png";
   final _avator = "lib/images/myAvator.jpg";
 
@@ -55,8 +60,12 @@ class LoginPage extends StatelessWidget {
     ]));
   }
 }
+class LoginBody extends StatefulWidget {
+  @override
+  _LoginBodyState createState() => _LoginBodyState();
+}
 
-class LoginBody extends StatelessWidget {
+class _LoginBodyState extends State<LoginBody> {
   final TextEditingController _userNameController = new TextEditingController();
   final TextEditingController _pwdController = new TextEditingController();
   final TapGestureRecognizer _recognizer = new TapGestureRecognizer();
@@ -103,7 +112,7 @@ class LoginBody extends StatelessWidget {
 
     DioUtil.getInstance().post(
       "/user/login",
-      (data) async {
+          (data) async {
         LoginResponse response = LoginResponse.fromJsonMap(data);
         await SharedPreferences.getInstance()
           ..setString(Constants.spKey_username, map["username"])
@@ -212,3 +221,4 @@ class LoginBody extends StatelessWidget {
     _pwdController.text = sp.getString(Constants.spKey_pwd);
   }
 }
+
