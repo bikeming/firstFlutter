@@ -25,8 +25,8 @@ Flutter与Dart学习的第一个项目(WanAndroid项目)
 
 ## apk下载
 
-* [release.apk](https://github.com/bikeming/firstFlutter/blob/master/sapk/app-release.apk)
-* [debug.apk](https://github.com/bikeming/firstFlutter/blob/master/sapk/app-debug.apk)
+* [release.apk](https://raw.githubusercontent.com/bikeming/firstFlutter/master/sapk/app-release.apk)
+* [debug.apk](https://raw.githubusercontent.com/bikeming/firstFlutter/master/sapk/app-debug.apk)
 
 
 ## Flutter 学习(推荐)
