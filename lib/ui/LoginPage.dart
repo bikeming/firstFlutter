@@ -60,6 +60,7 @@ class _LoginPageState extends State<LoginPage> {
     ]));
   }
 }
+
 class LoginBody extends StatefulWidget {
   @override
   _LoginBodyState createState() => _LoginBodyState();
@@ -70,6 +71,14 @@ class _LoginBodyState extends State<LoginBody> {
   final TextEditingController _pwdController = new TextEditingController();
   final TapGestureRecognizer _recognizer = new TapGestureRecognizer();
   BuildContext _context;
+
+  @override
+  void dispose() {
+    super.dispose();
+    _userNameController.dispose();
+    _pwdController.dispose();
+    _recognizer.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +121,7 @@ class _LoginBodyState extends State<LoginBody> {
 
     DioUtil.getInstance().post(
       "/user/login",
-          (data) async {
+      (data) async {
         LoginResponse response = LoginResponse.fromJsonMap(data);
         await SharedPreferences.getInstance()
           ..setString(Constants.spKey_username, map["username"])
@@ -221,4 +230,3 @@ class _LoginBodyState extends State<LoginBody> {
     _pwdController.text = sp.getString(Constants.spKey_pwd);
   }
 }
-
