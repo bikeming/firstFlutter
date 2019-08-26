@@ -1,9 +1,9 @@
 # firstflutter
 
-Flutter与Dart学习的第一个项目(WanAndroid项目)
-*所有数据和接口都来自:[WanAndroid](https://www.wanandroid.com/index)
-*debug和release的包由于下载太慢 已经删除，建议自己编译
-*测试账户 userName：fengzi; pwd:123456
+* Flutter与Dart学习的第一个项目(WanAndroid项目)
+* 所有数据和接口都来自:[WanAndroid](https://www.wanandroid.com/index)
+* debug和release的包由于下载太慢 已经删除，建议自己编译
+* 测试账户 userName：fengzi; pwd:123456
 
 ## 项目截图
 
