@@ -1,4 +1,4 @@
-# firstflutter
+# WanAndroid_Flutter
 
 * Flutter与Dart学习的第一个项目(WanAndroid项目)
 * 所有数据和接口都来自:[WanAndroid](https://www.wanandroid.com/index)
@@ -14,7 +14,7 @@
 ![](screenshots/5.jpg)
 
 ## Web端项目截图
-* 说明:https://www.wanandroid.com域名未设置跨域，所有Web端debug下无法进行访问
+* 说明: www.wanandroid.com域名未设置跨域，所有Web端debug下无法进行访问
 ![](screenshots/flutter_web.jpg)
 
 ## Desktop端项目截图
