@@ -2,10 +2,9 @@
 
 * Flutter与Dart学习的第一个项目(WanAndroid项目)
 * 所有数据和接口都来自:[WanAndroid](https://www.wanandroid.com/index)
-* debug和release的包由于下载太慢 已经删除，建议自己编译
 * 测试账户 userName：fengzi; pwd:123456
 
-## 项目截图
+## Android端项目截图
 
 ![](screenshots/0.jpg)
 ![](screenshots/1.jpg)
@@ -14,6 +13,13 @@
 ![](screenshots/4.jpg)
 ![](screenshots/5.jpg)
 
+## Web端项目截图
+* 说明:https://www.wanandroid.com域名未设置跨域，所有Web端debug下无法进行访问
+![](screenshots/flutter_web.jpg)
+
+## Desktop端项目截图
+![](screenshots/flutter_desktop_home.jpg)
+![](screenshots/flutter_desktop_des.jpg)
 
 ## 用到的pub库
 
@@ -23,12 +29,6 @@
 * WebView:[flutter_webview_plugin](https://pub.flutter-io.cn/packages/flutter_webview_plugin)
 * 轮播图:[flutter_swiper](https://pub.flutter-io.cn/packages/flutter_swiper)
 * 吐司:[fluttertoast](https://pub.flutter-io.cn/packages/fluttertoast)
-
-
-## apk下载
-
-* [release.apk](https://raw.githubusercontent.com/bikeming/firstFlutter/master/sapk/app-release.apk)
-* [debug.apk](https://raw.githubusercontent.com/bikeming/firstFlutter/master/sapk/app-debug.apk)
 
 
 ## Flutter 学习(推荐)
